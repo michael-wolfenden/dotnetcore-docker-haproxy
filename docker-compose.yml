@@ -1,0 +1,52 @@
+version: '2'
+services:
+    web:
+        build: ./website
+        container_name: website
+        ports:
+            - "5000:5000"
+        networks:
+            - front-tier
+
+    load-balancer:
+        build: ./load-balancer
+        container_name: load-balancer
+        networks:
+            - front-tier
+            - back-tier
+
+    api1:
+        build: ./api
+        container_name: api1
+        networks:
+            - back-tier
+
+    api2:
+        build: ./api
+        container_name: api2
+        networks:
+            - back-tier
+
+    api3:
+        build: ./api
+        container_name: api3
+        networks:
+            - back-tier
+
+    api4:
+        build: ./api
+        container_name: api4
+        networks:
+            - back-tier
+
+    api1:
+        build: ./api
+        container_name: api5
+        networks:
+            - back-tier
+
+networks:
+    front-tier:
+        driver: bridge
+    back-tier:
+        driver: bridge

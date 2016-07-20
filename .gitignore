@@ -1,0 +1,9 @@
+*.user
+*.suo
+**/bin/*
+**/obj/*
+**/artifacts/*
+.vs
+*.lock.json
+
+
