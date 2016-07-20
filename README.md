@@ -14,7 +14,7 @@ This will trigger a publish on the two aspnetcore apps and then build all the do
 
 Then run `.\run.ps1` with the `-Compose` switch
 
->= .\run.ps1 -Compose
+    > .\run.ps1 -Compose
 
 Launch a browser at http://docker:5000 and each refresh should return a different machine name
 
