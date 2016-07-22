@@ -39,7 +39,7 @@ services:
         networks:
             - back-tier
 
-    api1:
+    api5:
         build: ./api
         container_name: api5
         networks:
