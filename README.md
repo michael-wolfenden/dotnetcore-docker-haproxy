@@ -2,7 +2,7 @@
 
 Sample app showing an aspnetcore website connecting to 5 instances of an aspnetcore api load-balanced round robin style via haproxy
 
-![Compose](http://i.imgur.com/Owk9CHw.png)
+![Compose](http://i.imgur.com/0aB98ap.png)
 
 ## Getting started
 
