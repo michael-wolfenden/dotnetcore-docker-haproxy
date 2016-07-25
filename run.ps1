@@ -20,11 +20,14 @@ function PublishAllProjects () {
     Get-ChildItem . `
         | where { $_.psiscontainer } `
         | where { (Test-Path (Join-Path $_.fullname "project.json")) } `
-        | foreach {
-            cd $_.fullname
-            Remove-Item -Recurse -Force -ErrorAction SilentlyContinue artifacts
-            dotnet publish -o artifacts
-            cd ..
+        | foreach { 
+            $projectDir = $_.fullname
+            $artifactsDir = Join-Path $projectDir "artifacts"
+            $projectJsonPath = Join-Path $projectDir "project.json"
+
+            Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $artifactsDir
+
+            dotnet publish $projectJsonPath -o $artifactsDir
         }
 }
 
