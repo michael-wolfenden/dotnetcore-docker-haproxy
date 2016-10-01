@@ -28,7 +28,7 @@ function PublishAllProjects () {
             Remove-Item -Recurse -Force -ErrorAction SilentlyContinue $artifactsDir
 
             dotnet restore $projectJsonPath
-            dotnet publish $projectJsonPath -o $artifactsDir
+            dotnet publish $projectJsonPath --output $artifactsDir --configuration Release
         }
 }
 
