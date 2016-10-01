@@ -1,11 +1,9 @@
-FROM microsoft/dotnet:1.0.0-core
-
-WORKDIR /app
+FROM microsoft/aspnetcore:1.0.1
 
 ENV HOST_URI http://0.0.0.0:5000/
-
 EXPOSE 5000
 
-ENTRYPOINT ["dotnet", "api.dll"]
+WORKDIR /app
+COPY ./artifacts /app
 
-COPY artifacts /app
+ENTRYPOINT ["dotnet", "api.dll"]
