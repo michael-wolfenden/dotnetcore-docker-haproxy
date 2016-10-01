@@ -16,7 +16,7 @@ Then run `.\run.ps1` with the `-Compose` switch
 
     > .\run.ps1 -Compose
 
-Launch a browser at http://docker:5000 and each refresh should return a different machine name
+Launch a browser at http://localhost:5000 and each refresh should return a different machine name
 
 ## Cleaning up
 
